@@ -1,4 +1,5 @@
 #include "Human.h"
+
 #include <iostream>
 
 char Human::makeMove() {
@@ -8,3 +9,5 @@ char Human::makeMove() {
 }
 
 Human::Human(std::string name) { Name = name; };
+
+Human::Human() { Name = "Human"; }
