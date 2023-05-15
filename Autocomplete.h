@@ -23,18 +23,9 @@ class Autocomplete {
     Autocomplete();
     void insert(std::string word);
 
-    vector<string> getSuggestions(std::string partialWord) {
-        TrieNode* currentNode = root;
-        vector<string> suggestions;
-        for (char c : partialWord) {
-        int in = c - 'a'; // Assuming lowercase English alphabet
-            if (currentNode->children[in] == nullptr) {
-                return suggestions;
-            }
-            currentNode = currentNode->children[in];
-        }
-
-        return suggestions;  // Return true if the partial word is found in the trie
+    std::vector<std::string> getSuggestions(std::string partialWord) {
+        std::vector<std::string> suggestion;
+        return suggestion;
     }
 };
 
