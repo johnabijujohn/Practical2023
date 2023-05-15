@@ -43,8 +43,9 @@ void Autocomplete::getWords(std::string builtWord, TrieNode* current, std::vecto
     // loop through all the alphabets
     for (int i = 0; i < 26; i++) {
       if (current->children[i] != nullptr) { // if a entry is not nullptr that means there is a valid letter
-        builtWord.push_back('a' + i); // add valid letter to the back of current word
-        getWords(builtWord, current->children[i], suggestions); // call function again but with the next child
+        std::string newWord = builtWord;// add valid letter to the back of current word
+        newWord.push_back('a' + i);
+        getWords(newWord, current->children[i], suggestions); // call function again with the next child
       }
     }
 }
