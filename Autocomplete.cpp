@@ -8,8 +8,7 @@ Autocomplete::Autocomplete() {
 void Autocomplete::insert(std::string word) {
     TrieNode* currentNode = root;
 
-    for (int i = 0; i < word.length(); i++) {
-    char c = word[i];
+    for (char c : word) {
     int in = c - 'a'; // Assuming lowercase English alphabet
         if (currentNode->children[in] == nullptr) {
             currentNode->children[in] = new TrieNode();
