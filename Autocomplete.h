@@ -25,8 +25,7 @@ class Autocomplete {
 
     bool getSuggestions(std::string partialWord) {
         TrieNode* currentNode = root;
-        for (int i = 0; i < partialWord.length(); i++) {
-        char c = partialWord[i];
+        for (char c : partialWord) {
         int in = c - 'a'; // Assuming lowercase English alphabet
             if (currentNode->children[in] == nullptr) {
                 return false;
