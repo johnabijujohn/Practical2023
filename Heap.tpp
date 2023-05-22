@@ -56,7 +56,17 @@ Heap<T>::Heap(std::vector<T> start_values) {
 
 template <typename T>
 void Heap<T>::insert(T value) {
-   // TO BE IMPLEMENTED
+   values.push_back(value); // add value to back of values
+   int i = (values.size() - 1);
+   while (i > 0) {
+    // check if new value is smaller than parent
+    int p = floor((i-1)/2); // index of parent
+    if (values[i] < values[p]) { // if child is smaller than parent
+      std::swap(values[i], values[p]); // swap child and parent
+    } else {
+      break;
+    }
+   }
 }
 
 /*******************************/
@@ -74,7 +84,18 @@ void Heap<T>::remove(T value) {
 
 template <typename T>
 T Heap<T>::getMin() {
+  // implementation for min heap since smallest value is the root
   return values[0];
+  /* implementation for max and min heap
+  T min;
+  min = values[0];
+  for (int i = 0; i < values.size(); i++) {
+    if (values[i] < min) {
+      min = values[i];
+    }
+  }
+  return min;
+  */
 }
 
 /*******************************/
