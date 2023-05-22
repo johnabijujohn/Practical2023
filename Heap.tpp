@@ -63,6 +63,7 @@ void Heap<T>::insert(T value) {
     int p = floor((i-1)/2); // index of parent
     if (values[i] < values[p]) { // if child is smaller than parent
       std::swap(values[i], values[p]); // swap child and parent
+      i = p;
     } else {
       break;
     }
