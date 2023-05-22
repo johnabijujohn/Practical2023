@@ -77,18 +77,6 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
-  int v_size = values.size();
-  int index;
-  // find index of value
-  for (int i = 0; i < v_size; i++) {
-    if (values[i] == value) {
-      index = i;
-      std::swap(values[i], values[v_size - 1]); // swap values[i] with last value of index
-      heapify(i);
-      break;
-    }
-  }
-
   // TO BE IMPLEMENTED
 }
 
