@@ -57,12 +57,12 @@ Heap<T>::Heap(std::vector<T> start_values) {
 template <typename T>
 void Heap<T>::insert(T value) {
    values.push_back(value); // add value to back of values
-   int i = (values.size() - 1);
-   while (i > 0) {
+   int c = (values.size() - 1);
+   while (c > 0) {
     // check if new value is smaller than parent
-    int p = floor((i-1)/2); // index of parent
-    if (values[i] < values[p]) { // if child is smaller than parent
-      std::swap(values[i], values[p]); // swap child and parent
+    int p = floor((c-1)/2); // index of parent
+    if (values[c] < values[p]) { // if child is smaller than parent
+      std::swap(values[c], values[p]); // swap child and parent
       heapify(p);
       i = p; // check if parent is bigger than its parent
     } else {
@@ -77,6 +77,18 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
+  int v_size = values.size();
+  int index;
+  // find index of value
+  for (int i = 0; i < v_size; i++) {
+    if (values[i] == value) {
+      index = i;
+      std::swap(values[i], values[v_size - 1]); // swap values[i] with last value of index
+      heapify(i);
+      break;
+    }
+  }
+
   // TO BE IMPLEMENTED
 }
 
