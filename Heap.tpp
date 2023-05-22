@@ -58,8 +58,8 @@ template <typename T>
 void Heap<T>::insert(T value) {
   values.push_back(value);
   int i = values.size()-1;
-  while (i = 0) {
-    int p = floor((i) / 2)
+  while (i > 0) {
+    int p = floor((i-1) / 2)
     if (values[i] > values[p]) {
       //swap
       std::swap(values[i], values[p]);
@@ -76,7 +76,6 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
-  
 }
 
 /*******************************/
