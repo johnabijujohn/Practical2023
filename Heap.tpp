@@ -65,8 +65,6 @@ void Heap<T>::insert(T value) {
       std::swap(values[i], values[p]); // swap child and parent
       heapify(p);
       i = p; // check if parent is bigger than its parent
-    } else {
-      break;
     }
    }
 }
@@ -80,6 +78,8 @@ void Heap<T>::remove(T value) {
   for (int i = 0; i < values.size(); i++) {
     if (values[i] == value) {
       std::swap(values[i], values[values.size() - 1]);
+      values.pop_back(); // remove last element;
+
     }
   }
   // TO BE IMPLEMENTED
