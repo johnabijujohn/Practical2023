@@ -70,7 +70,6 @@ void Heap<T>::insert(T value) {
     }
     }
    }
-}
 
 /*******************************/
 /* delete values from the heap */
