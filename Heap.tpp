@@ -58,7 +58,8 @@ template <typename T>
 void Heap<T>::insert(T value) {
    values.push_back(value); // add value to back of values
    int i = (values.size() - 1);
-   heapify(i);
+   int p = floor((i-1)/2); // index of parent
+   heapify(p);
    /*while (i > 0) {
     // check if new value is smaller than parent
     int p = floor((i-1)/2); // index of parent
