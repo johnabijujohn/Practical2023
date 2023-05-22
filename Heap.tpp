@@ -56,7 +56,17 @@ Heap<T>::Heap(std::vector<T> start_values) {
 
 template <typename T>
 void Heap<T>::insert(T value) {
-
+   // TO BE IMPLEMENTED
+   values.push_back(value); // add value to values
+   int i = values.size() - 1;
+   while (i > 0) { // check each parent
+    int p = (i - 1) / 2;
+    if (values[i] > values[p]) {
+      std::swap(values[i], values[p]);
+    } else {
+      break;
+    }
+   }
 }
 
 /*******************************/
@@ -65,6 +75,7 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
+  // TO BE IMPLEMENTED
 }
 
 /*******************************/
