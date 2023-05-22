@@ -56,9 +56,9 @@ Heap<T>::Heap(std::vector<T> start_values) {
 
 template <typename T>
 void Heap<T>::insert(T value) {
-  
-  
-  // TO BE IMPLEMENTED
+  values.push_back(value);
+
+  heapify(values.size() - 1);
 }
 
 /*******************************/
@@ -67,15 +67,7 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
-  int i;
-  for (i = 0; i < values.size; i++) {
-    if (values[i] = value) {
-      break;
-    }
-  }
-  values[i] = values[values.size() - 1];
-  values.pop_back();
-  heapify(i);
+  
 }
 
 /*******************************/
