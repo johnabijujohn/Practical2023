@@ -57,8 +57,17 @@ Heap<T>::Heap(std::vector<T> start_values) {
 template <typename T>
 void Heap<T>::insert(T value) {
   values.push_back(value);
-
-  heapify(values.size() - 1);
+  int i = values.size()-1;
+  while (i = 0) {
+    int p = floor((i) / 2)
+    if (values[i] > values[p]) {
+      //swap
+      std::swap(values[i], values[p]);
+      i = p;
+    } else {
+      break;
+    }
+  }  
 }
 
 /*******************************/
