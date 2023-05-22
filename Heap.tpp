@@ -67,17 +67,13 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
-  int valuesSize = values.size();
-
-  // find index of value
   int i;
-  for (i = 0; i < valuesSize; i++) {
-    if (values[i] == value) {
+  for (i = 0; i < values.size; i++) {
+    if (values[i] = value) {
       break;
     }
   }
-
-  values[i] = values[valuesSize - 1];
+  values[i] = values[values.size() - 1];
   values.pop_back();
   heapify(i);
 }
