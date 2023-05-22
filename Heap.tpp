@@ -82,6 +82,7 @@ void Heap<T>::remove(T value) {
       std::swap(values[i], values[values.size() - 1]);
       values.pop_back(); // remove last element;
       heapify(i);
+      break;
     }
   }
   // TO BE IMPLEMENTED
